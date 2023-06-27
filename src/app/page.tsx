@@ -3,16 +3,19 @@ import { Header } from '@/components/Header'
 import { HeroImage } from '@/components/HeroImage'
 import { HeroText } from '@/components/HeroText'
 
+import { Service } from '@/components/Service'
+import { About } from '@/components/About'
+
 export default function Home() {
   return (
-    <div>
+    <div className="bg-primary-brand-green-light-2">
       {/* hero-section */}
-      <div className="h-[42rem] bg-primary-brand-green-light">
+      <div className="h-[42rem] bg-primary-brand-green-light mobile:h-auto">
         <Header />
 
         {/* Layout */}
         <div className="relative mx-auto w-[90%] max-w-[70rem]">
-          <div className="flex justify-between gap-[3.18rem]">
+          <div className="flex justify-between gap-[3.18rem] mobile:flex-col">
             {/* hero-text */}
             <HeroText />
             {/* hero-image */}
@@ -23,6 +26,12 @@ export default function Home() {
           <DivNumbers />
         </div>
       </div>
+
+      {/* service-section */}
+      <Service />
+
+      {/* about-section */}
+      <About />
     </div>
   )
 }

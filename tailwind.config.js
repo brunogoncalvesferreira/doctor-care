@@ -6,7 +6,11 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        mobile: { max: '768px' },
+      },
+    },
     fontWeight: {
       bold: 700,
       regular: 400,

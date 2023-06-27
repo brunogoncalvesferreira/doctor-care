@@ -1,6 +1,6 @@
 export function DivNumbers() {
   return (
-    <div className="absolute z-50 -mt-16 flex h-[13.125rem] w-full items-center justify-between rounded-md bg-primary-brand-beige px-[9rem]">
+    <div className="absolute z-50 -mt-16 flex h-[13.125rem] w-full items-center justify-between rounded-md bg-primary-brand-beige px-[9rem] mobile:h-auto mobile:flex-col mobile:gap-14 mobile:py-10">
       <div className="flex flex-col items-center">
         <span className="text-48 font-bold text-secundary-gray-headline">
           +3500
