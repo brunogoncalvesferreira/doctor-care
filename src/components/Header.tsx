@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { Links } from './Links'
 import { AlignRight, X } from 'lucide-react'
 import logo from '../app/assets/logo.svg'
 import logoMobile from '../app/assets/logo-footer.svg'
 import Image from 'next/image'
-import { Links } from './Links'
 
 export function Header() {
   const [openMenuMobile, setOpenMenuMobile] = useState(false)
