@@ -5,6 +5,8 @@ import { HeroText } from '@/components/HeroText'
 
 import { Service } from '@/components/Service'
 import { About } from '@/components/About'
+import { Contact } from '@/components/Contact'
+import { Footer } from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -32,6 +34,12 @@ export default function Home() {
 
       {/* about-section */}
       <About />
+
+      {/* contact-section */}
+      <Contact />
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

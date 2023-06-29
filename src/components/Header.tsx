@@ -1,42 +1,101 @@
-import { AlignRight } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { AlignRight, X } from 'lucide-react'
 import logo from '../app/assets/logo.svg'
+import logoMobile from '../app/assets/logo-footer.svg'
 import Image from 'next/image'
+import { Links } from './Links'
 
 export function Header() {
+  const [openMenuMobile, setOpenMenuMobile] = useState(false)
+
+  function handleOpenMenuMobile() {
+    setOpenMenuMobile(!openMenuMobile)
+  }
+  console.log(openMenuMobile)
+
   return (
-    <header className=" bg-primary-brand-green-light py-[1.625rem]">
+    <header className="relative bg-primary-brand-green-light py-[1.625rem]">
       <nav className="mx-auto flex w-[90%] max-w-[70rem] items-center justify-between">
-        <div>
+        <div
+          className={`${
+            openMenuMobile === true ? 'absolute z-20 ml-1 mt-12' : ''
+          }`}
+        >
           <span>
-            <Image src={logo} width={132} height={17} alt="" />
+            {openMenuMobile === true ? (
+              <Image src={logoMobile} width={132} height={17} alt="" />
+            ) : (
+              <Image src={logo} width={132} height={17} alt="" />
+            )}
           </span>
         </div>
 
-        <div className="space-x-8 mobile:hidden">
+        <div
+          className={`${
+            openMenuMobile === true
+              ? 'absolute left-0 top-0 z-10 flex h-screen w-screen flex-col items-center justify-center gap-12 bg-primary-brand-green'
+              : 'flex items-center justify-center gap-8 mobile:hidden'
+          } `}
+        >
           <a
-            className="relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-14 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:before:w-full hover:before:transition-all"
+            onClick={handleOpenMenuMobile}
+            className={`${
+              openMenuMobile === true
+                ? 'text-20 font-bold text-primary-brand-green-light'
+                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
+            }`}
             href=""
           >
             Início
           </a>
           <a
-            className="relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-14 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:before:w-full hover:before:transition-all"
+            onClick={handleOpenMenuMobile}
+            className={`${
+              openMenuMobile === true
+                ? 'text-20 font-bold text-primary-brand-green-light'
+                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
+            }`}
             href=""
           >
             Sobre
           </a>
           <a
-            className="relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-14 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:before:w-full hover:before:transition-all"
+            onClick={handleOpenMenuMobile}
+            className={`${
+              openMenuMobile === true
+                ? 'text-20 font-bold text-primary-brand-green-light'
+                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
+            }`}
             href=""
           >
             Serviços
           </a>
           <a
-            className="relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-14 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:before:w-full hover:before:transition-all"
+            onClick={handleOpenMenuMobile}
+            className={`${
+              openMenuMobile === true
+                ? 'text-20 font-bold text-primary-brand-green-light'
+                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
+            }`}
             href=""
           >
             Depoimentos
           </a>
+
+          <a
+            className={`${
+              openMenuMobile === true
+                ? 'flex w-[13rem] items-center justify-center rounded-3xl  bg-primary-brand-green-light px-[1.5rem] py-[0.625rem] text-14 font-bold uppercase text-primary-brand-green transition-all '
+                : 'absolute left-0 hidden'
+            }`}
+            href="#"
+          >
+            Agendar consulta
+          </a>
+
+          <Links mobile={openMenuMobile} />
         </div>
 
         <a
@@ -46,8 +105,19 @@ export function Header() {
           Agendar consulta
         </a>
 
-        <button className="hidden mobile:block">
-          <AlignRight size={40} className="text-primary-brand-green" />
+        <button
+          onClick={handleOpenMenuMobile}
+          className={`${
+            openMenuMobile === true
+              ? 'absolute right-0 z-20 mr-5 mt-12'
+              : 'hidden mobile:block'
+          }`}
+        >
+          {openMenuMobile === true ? (
+            <X size={40} className="text-primary-brand-green-light" />
+          ) : (
+            <AlignRight size={40} className="text-primary-brand-green" />
+          )}
         </button>
       </nav>
     </header>
