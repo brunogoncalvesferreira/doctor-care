@@ -3,7 +3,10 @@ import { Cards } from './Cards'
 
 export function Service() {
   return (
-    <div className="mx-auto mt-52 w-[90%] max-w-[70rem] mobile:mt-[400px]">
+    <div
+      id="service"
+      className="mx-auto mt-52 w-[90%] max-w-[70rem] mobile:mt-[400px]"
+    >
       <h3 className="mb-4 text-center text-14 font-bold uppercase leading-6 tracking-wide text-primary-brand-green">
         Serviços
       </h3>

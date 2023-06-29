@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Links } from './Links'
 import { AlignRight, X } from 'lucide-react'
+import Link from 'next/link'
 import logo from '../app/assets/logo.svg'
 import logoMobile from '../app/assets/logo-footer.svg'
 import Image from 'next/image'
@@ -40,7 +41,6 @@ export function Header() {
           } `}
         >
           <a
-            onClick={handleOpenMenuMobile}
             className={`${
               openMenuMobile === true
                 ? 'text-20 font-bold text-primary-brand-green-light'
@@ -51,7 +51,6 @@ export function Header() {
             Início
           </a>
           <a
-            onClick={handleOpenMenuMobile}
             className={`${
               openMenuMobile === true
                 ? 'text-20 font-bold text-primary-brand-green-light'
@@ -61,19 +60,18 @@ export function Header() {
           >
             Sobre
           </a>
-          <a
-            onClick={handleOpenMenuMobile}
+          <Link
             className={`${
               openMenuMobile === true
                 ? 'text-20 font-bold text-primary-brand-green-light'
                 : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
             }`}
-            href=""
+            href={'#service'}
+            scroll={false}
           >
             Serviços
-          </a>
+          </Link>
           <a
-            onClick={handleOpenMenuMobile}
             className={`${
               openMenuMobile === true
                 ? 'text-20 font-bold text-primary-brand-green-light'
