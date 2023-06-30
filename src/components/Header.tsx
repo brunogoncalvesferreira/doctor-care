@@ -14,14 +14,22 @@ export function Header() {
   function handleOpenMenuMobile() {
     setOpenMenuMobile(!openMenuMobile)
   }
-  console.log(openMenuMobile)
+
+  function handleCloseMenuMobile() {
+    const stateInitOpenMenuMobile = false
+    setOpenMenuMobile(stateInitOpenMenuMobile)
+  }
 
   return (
-    <header className="relative bg-primary-brand-green-light py-[1.625rem]">
-      <nav className="mx-auto flex w-[90%] max-w-[70rem] items-center justify-between">
+    <header className={'relative  bg-primary-brand-green-light py-[1.625rem]'}>
+      <nav
+        className={
+          'mx-auto flex w-[90%] max-w-[70rem]  items-center justify-between'
+        }
+      >
         <div
           className={`${
-            openMenuMobile === true ? 'absolute z-20 ml-1 mt-12' : ''
+            openMenuMobile === true ? 'absolute z-20 ml-1 mt-12 ' : ''
           }`}
         >
           <span>
@@ -36,51 +44,58 @@ export function Header() {
         <div
           className={`${
             openMenuMobile === true
-              ? 'absolute left-0 top-0 z-10 flex h-screen w-screen flex-col items-center justify-center gap-12 bg-primary-brand-green'
+              ? 'absolute left-0 top-0 z-10 flex h-screen w-screen flex-col items-center justify-center gap-12 overflow-auto bg-primary-brand-green'
               : 'flex items-center justify-center gap-8 mobile:hidden'
           } `}
         >
-          <a
-            className={`${
-              openMenuMobile === true
-                ? 'text-20 font-bold text-primary-brand-green-light'
-                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
-            }`}
-            href=""
-          >
-            Início
-          </a>
-          <a
-            className={`${
-              openMenuMobile === true
-                ? 'text-20 font-bold text-primary-brand-green-light'
-                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
-            }`}
-            href=""
-          >
-            Sobre
-          </a>
           <Link
             className={`${
               openMenuMobile === true
                 ? 'text-20 font-bold text-primary-brand-green-light'
                 : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
             }`}
-            href={'#service'}
+            onClick={handleCloseMenuMobile}
+            href="/"
             scroll={false}
           >
-            Serviços
+            Início
           </Link>
-          <a
+          <Link
             className={`${
               openMenuMobile === true
                 ? 'text-20 font-bold text-primary-brand-green-light'
                 : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
             }`}
-            href=""
+            onClick={handleCloseMenuMobile}
+            href="#about"
+            scroll={false}
           >
-            Depoimentos
-          </a>
+            Sobre
+          </Link>
+          <Link
+            className={`${
+              openMenuMobile === true
+                ? 'text-20 font-bold text-primary-brand-green-light'
+                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
+            }`}
+            onClick={handleCloseMenuMobile}
+            href="#service"
+            scroll={false}
+          >
+            Serviços
+          </Link>
+          <Link
+            className={`${
+              openMenuMobile === true
+                ? 'text-20 font-bold text-primary-brand-green-light'
+                : "relative text-16 text-primary-brand-green before:absolute before:left-0 before:top-0 before:mt-8 before:h-[2px] before:w-0 before:rounded-full before:bg-primary-brand-green before:content-[''] hover:font-bold hover:before:w-full hover:before:transition-all"
+            }`}
+            onClick={handleCloseMenuMobile}
+            href="#contact"
+            scroll={false}
+          >
+            Contato
+          </Link>
 
           <a
             className={`${

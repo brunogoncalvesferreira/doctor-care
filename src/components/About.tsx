@@ -3,7 +3,7 @@ import doctor from '../app/assets/doctor.png'
 
 export function About() {
   return (
-    <div className="mt-40 bg-primary-brand-beige py-40">
+    <div id="about" className="mt-40 bg-primary-brand-beige py-40">
       <div className="mx-auto flex w-[90%] max-w-[70rem] items-center gap-16 mobile:flex-col-reverse">
         <Image src={doctor} width={480} height={414} alt="" />
 

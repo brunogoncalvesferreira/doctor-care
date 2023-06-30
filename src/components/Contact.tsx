@@ -5,7 +5,7 @@ import { Mail, MapPin } from 'lucide-react'
 
 export function Contact() {
   return (
-    <div className="py-40">
+    <div id="contact" className="py-40">
       <div className="mx-auto flex w-[90%] max-w-[70rem] items-center justify-between mobile:flex-col mobile:gap-14">
         <div>
           <h2 className="mb-10 max-w-[404px] text-40 font-bold leading-normal text-secundary-gray-headline">

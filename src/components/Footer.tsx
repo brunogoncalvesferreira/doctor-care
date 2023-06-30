@@ -21,7 +21,7 @@ export function Footer() {
           </div>
         </div>
 
-        <Links />
+        <Links mobile />
       </div>
     </footer>
   )
