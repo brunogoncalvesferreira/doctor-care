@@ -127,7 +127,7 @@ export function Header() {
           <a
             className={`${
               openMenuMobile === true
-                ? 'flex w-[13rem] items-center justify-center rounded-3xl  bg-primary-brand-green-light px-[1.5rem] py-[0.625rem] text-14 font-bold uppercase text-primary-brand-green transition-all '
+                ? 'flex w-[15rem] items-center justify-center rounded-3xl bg-primary-brand-green-light px-[0.8rem] py-[1rem] text-14 font-bold uppercase text-primary-brand-green transition-all '
                 : 'absolute left-0 hidden'
             }`}
             href="#"
